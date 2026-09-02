@@ -1,0 +1,144 @@
+{
+  "name": "cc-diff-review",
+  "displayName": "CC Diff Review",
+  "description": "Review your AI agent's edits — accept/reject each hunk — on stock VS Code. No AI, no provider, no fork.",
+  "version": "0.1.0",
+  "publisher": "lucipanuci",
+  "author": {
+    "name": "Lucian Stoian"
+  },
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/LuciPanuci/cc-diff-review.git"
+  },
+  "bugs": {
+    "url": "https://github.com/LuciPanuci/cc-diff-review/issues"
+  },
+  "homepage": "https://github.com/LuciPanuci/cc-diff-review#readme",
+  "icon": "media/icon.png",
+  "sponsor": {
+    "url": "https://ko-fi.com/lucipanuci"
+  },
+  "keywords": [
+    "diff",
+    "review",
+    "claude code",
+    "ai",
+    "accept reject"
+  ],
+  "engines": {
+    "vscode": "^1.85.0"
+  },
+  "categories": [
+    "SCM Providers",
+    "Other"
+  ],
+  "galleryBanner": {
+    "color": "#D64545",
+    "theme": "dark"
+  },
+  "activationEvents": [
+    "onStartupFinished"
+  ],
+  "main": "./out/extension.js",
+  "contributes": {
+    "commands": [
+      {
+        "command": "ccdiffs.snapshotCurrent",
+        "title": "CC Diffs: Snapshot current file (baseline)"
+      },
+      {
+        "command": "ccdiffs.reviewCurrent",
+        "title": "CC Diffs: Refresh review for current file"
+      },
+      {
+        "command": "ccdiffs.openDiff",
+        "title": "CC Diffs: Open diff view (deleted ↔ inserted)",
+        "icon": "$(git-compare)"
+      },
+      {
+        "command": "ccdiffs.acceptAll",
+        "title": "CC Diffs: Accept all changes in file",
+        "icon": "$(check-all)"
+      },
+      {
+        "command": "ccdiffs.rejectAll",
+        "title": "CC Diffs: Reject all changes in file",
+        "icon": "$(discard)"
+      },
+      {
+        "command": "ccdiffs.donate",
+        "title": "CC Diffs: Support this extension",
+        "icon": "$(heart)"
+      },
+      {
+        "command": "ccdiffs.acceptHunkAtCursor",
+        "title": "CC Diffs: Accept hunk at cursor"
+      },
+      {
+        "command": "ccdiffs.rejectHunkAtCursor",
+        "title": "CC Diffs: Reject hunk at cursor"
+      }
+    ],
+    "keybindings": [
+      {
+        "command": "ccdiffs.acceptHunkAtCursor",
+        "key": "cmd+enter",
+        "mac": "cmd+enter",
+        "win": "ctrl+enter",
+        "linux": "ctrl+enter",
+        "when": "editorTextFocus && ccdiffs.hasChanges"
+      },
+      {
+        "command": "ccdiffs.rejectHunkAtCursor",
+        "key": "cmd+backspace",
+        "mac": "cmd+backspace",
+        "win": "ctrl+backspace",
+        "linux": "ctrl+backspace",
+        "when": "editorTextFocus && ccdiffs.hasChanges"
+      },
+      {
+        "command": "ccdiffs.openDiff",
+        "key": "cmd+k cmd+d",
+        "mac": "cmd+k cmd+d",
+        "win": "ctrl+k ctrl+d",
+        "linux": "ctrl+k ctrl+d",
+        "when": "editorTextFocus && ccdiffs.hasChanges"
+      }
+    ],
+    "menus": {
+      "editor/title": [
+        {
+          "command": "ccdiffs.acceptAll",
+          "when": "ccdiffs.hasChanges",
+          "group": "navigation@1"
+        },
+        {
+          "command": "ccdiffs.openDiff",
+          "when": "ccdiffs.hasChanges",
+          "group": "navigation@2"
+        },
+        {
+          "command": "ccdiffs.rejectAll",
+          "when": "ccdiffs.hasChanges",
+          "group": "navigation@3"
+        },
+        {
+          "command": "ccdiffs.donate",
+          "when": "ccdiffs.hasChanges",
+          "group": "navigation@4"
+        }
+      ]
+    }
+  },
+  "scripts": {
+    "compile": "tsc -p ./",
+    "watch": "tsc -watch -p ./"
+  },
+  "devDependencies": {
+    "@types/node": "^20.0.0",
+    "@types/vscode": "^1.85.0",
+    "typescript": "^5.4.0"
+  }
+}

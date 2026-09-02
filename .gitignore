@@ -1,0 +1,6 @@
+node_modules/
+out/
+*.vsix
+.ccdiffs/
+playground/
+media/icon@256.png
