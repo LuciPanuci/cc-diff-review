@@ -13,11 +13,6 @@ review should read.
 > just reviews what already happened. That's the whole point: keep the setup you
 > already have, add a clean review layer on top.
 
-> **Before publishing:** drop a short screen-capture GIF of the accept/reject
-> flow right here — it's the single best thing you can do to sell the tool. Once
-> you add a `repository` link in `package.json`, relative image paths will render
-> on the Marketplace.
-
 ## Why
 
 - **Cursor / Windsurf** give you review UX — but they're whole **editor forks** you
