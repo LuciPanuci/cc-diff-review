@@ -11,3 +11,4 @@ node_modules/**
 *.vsix
 media/icon.svg
 media/icon@256.png
+media/demo.gif

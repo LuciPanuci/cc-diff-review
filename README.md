@@ -8,6 +8,8 @@ mode, then browse exactly what changed and **accept or reject each hunk**. The
 removed lines stack in red directly above the added lines in green, just like a
 review should read.
 
+![CC Diff Review — reviewing and accepting an agent's edits](media/demo.gif)
+
 > **What it is not:** this extension contains **zero AI**. It never calls a model,
 > needs no API key, and talks to no provider. Your agent does the editing — this
 > just reviews what already happened. That's the whole point: keep the setup you
