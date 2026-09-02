@@ -1,5 +1,9 @@
 # Changelog
 
+## 0.1.1
+
+- Added a demo GIF to the README / Marketplace listing.
+
 ## 0.1.0 — first public release
 
 - Post-edit **diff review** for local agent edits (Claude Code and any tool that
